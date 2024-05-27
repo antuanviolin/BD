@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Food Detail</title>
+</head>
+<body>
+    <h1>Food Detail</h1>
+    <p>Name: {{ food.name }}</p>
+    <a href="{% url 'food_edit' pk=food.pk %}">Edit</a>
+    <a href="{% url 'food_list' %}">Back to list</a>
+</body>
+</html>

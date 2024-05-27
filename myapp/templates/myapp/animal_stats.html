@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Animal Statistics</title>
+</head>
+<body>
+    <h1>Animal Statistics</h1>
+    <table border="1">
+        <tr>
+            {% for col in results.columns %}
+                <th>{{ col }}</th>
+            {% endfor %}
+        </tr>
+        {% for row in results.rows %}
+            <tr>
+                {% for cell in row %}
+                    <td>{{ cell }}</td>
+                {% endfor %}
+            </tr>
+        {% endfor %}
+    </table>
+    <a href="{% url 'home' %}">Back to Home</a>
+</body>
+</html>

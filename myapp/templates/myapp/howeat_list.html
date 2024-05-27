@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>How Animals Eat</title>
+</head>
+<body>
+    <h1>How Animals Eat</h1>
+    <a href="{% url 'howeat_new' %}">Add new How Eat record</a>
+    <ul>
+    {% for howeat in howeats %}
+        <li>
+            <a href="{% url 'howeat_detail' pk=howeat.pk %}">{{ howeat.type.name }} eats {{ howeat.food.name }} in {{ howeat.get_season_display }}</a>
+            <a href="{% url 'howeat_edit' pk=howeat.pk %}">Edit</a>
+            <form action="{% url 'howeat_delete' pk=howeat.pk %}" method="post" style="display:inline;">
+                {% csrf_token %}
+                <button type="submit">Delete</button>
+            </form>
+        </li>
+    {% endfor %}
+    </ul>
+    <a href="{% url 'home' %}">Back to home</a>
+</body>
+</html>

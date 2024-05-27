@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Responsibility for Animals</title>
+</head>
+<body>
+    <h1>Responsibility for Animals</h1>
+    <a href="{% url 'responsibilityforanimal_new' %}">Add new responsibility</a>
+    <ul>
+    {% for responsibilityforanimal in responsibilityforanimals %}
+        <li>
+            <a href="{% url 'responsibilityforanimal_detail' pk=responsibilityforanimal.pk %}">{{ responsibilityforanimal.animal.name }} is taken care of by {{ responsibilityforanimal.worker.name }}</a>
+            <a href="{% url 'responsibilityforanimal_edit' pk=responsibilityforanimal.pk %}">Edit</a>
+            <form action="{% url 'responsibilityforanimal_delete' pk=responsibilityforanimal.pk %}" method="post" style="display:inline;">
+                {% csrf_token %}
+                <button type="submit">Delete</button>
+            </form>
+        </li>
+    {% endfor %}
+    </ul>
+    <a href="{% url 'home' %}">Back to home</a>
+</body>
+</html>

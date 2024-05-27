@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Worker Detail</title>
+</head>
+<body>
+    <h1>{{ worker.name }}</h1>
+    <p>Proffession: {{ worker.profession }}</p>
+    <p>Wages: {{ worker.wages }}</p>
+    <p>Age: {{ worker.age }}</p>
+    <p>Date of Appointment: {{ worker.date_appointment }}</p>
+    <p>Date of Layoff: {{ worker.date_layoff }}</p>
+    <p>Responsibilities:</p>
+    <ul>
+    {% for responsibility in worker.responsibilities.all %}
+        <li>{{ responsibility.animal }} - {{ responsibility.date_start }} - {{ responsibility.date_end }}</li>
+    {% endfor %}
+    </ul>
+    <a href="{% url 'worker_edit' pk=worker.pk %}">Edit</a>
+    <a href="{% url 'worker_list' %}">Back to list</a>
+</body>
+</html>

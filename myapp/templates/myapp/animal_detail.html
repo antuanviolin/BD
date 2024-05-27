@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Animal Detail</title>
+</head>
+<body>
+    <h1>{{ animal.name }}</h1>
+    <p>Type: {{ animal.type.name }}</p>
+    <p>Height: {{ animal.height }}</p>
+    <p>Weight: {{ animal.weight }}</p>
+    <p>Age: {{ animal.age }}</p>
+    <p>Date of Entry: {{ animal.date_of_entry }}</p>
+    <p>Date of Departure: {{ animal.date_of_departure }}</p>
+    <p>Departure Zoo: {{ animal.departure_zoo }}</p>
+    <a href="{% url 'animal_edit' pk=animal.pk %}">Edit</a>
+    <a href="{% url 'animal_list' %}">Back to list</a>
+</body>
+</html>

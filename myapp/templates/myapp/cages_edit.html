@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Edit Cage</title>
+</head>
+<body>
+    <h1>Edit Cage</h1>
+    <form method="post">
+        {% csrf_token %}
+        <p>Cage ID: {{ form.instance.id }}</p>
+        {{ form.as_p }}
+        <button type="submit">Save</button>
+    </form>
+    <a href="{% url 'cages_list' %}">Back to list</a>
+</body>
+</html>

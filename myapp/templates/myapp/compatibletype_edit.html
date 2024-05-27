@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Edit Compatible Type</title>
+</head>
+<body>
+    <h1>Edit Compatible Type</h1>
+    <form method="post">
+        {% csrf_token %}
+        <p>Animal Type: {{ form.instance.animal_type }}</p>
+        <p>Compatible Type: {{ form.instance.compatible_type }}</p>
+        {{ form.as_p }}
+        <button type="submit">Save</button>
+    </form>
+    <a href="{% url 'compatibletype_list' %}">Back to list</a>
+</body>
+</html>

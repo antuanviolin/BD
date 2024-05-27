@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Food Seller Detail</title>
+</head>
+<body>
+    <h1>Food Seller Detail</h1>
+    <p>Seller: {{ foodseller.seller.name }}</p>
+    <p>Food: {{ foodseller.food.name }}</p>
+    <p>Weight: {{ foodseller.weight }}</p>
+    <p>Start Date: {{ foodseller.start }}</p>
+    <p>End Date: {{ foodseller.end }}</p>
+    <p>Price: {{ foodseller.price }}</p>
+    <a href="{% url 'foodseller_edit' pk=foodseller.pk %}">Edit</a>
+    <a href="{% url 'foodseller_list' %}">Back to list</a>
+</body>
+</html>

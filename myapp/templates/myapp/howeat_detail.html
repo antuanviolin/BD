@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>How Eat Detail</title>
+</head>
+<body>
+    <h1>How Eat Detail</h1>
+    <p>Animal Type: {{ howeat.type.name }}</p>
+    <p>Season: {{ howeat.get_season_display }}</p>
+    <p>Food: {{ howeat.food.name }}</p>
+    <p>Weight: {{ howeat.weight }}</p>
+    <p>Age From: {{ howeat.age_from }}</p>
+    <p>Age To: {{ howeat.age_to }}</p>
+    <a href="{% url 'howeat_edit' pk=howeat.pk %}">Edit</a>
+    <a href="{% url 'howeat_list' %}">Back to list</a>
+</body>
+</html>

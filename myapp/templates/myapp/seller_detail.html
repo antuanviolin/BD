@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Seller Detail</title>
+</head>
+<body>
+    <h1>Seller Detail</h1>
+    <p>Name: {{ seller.name }}</p>
+    <a href="{% url 'sellers_edit' pk=seller.pk %}">Edit</a>
+    <a href="{% url 'sellers_list' %}">Back to list</a>
+</body>
+</html>

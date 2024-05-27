@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Cage Neighbours Detail</title>
+</head>
+<body>
+    <h1>Cage Neighbours Detail</h1>
+    <p>Cage: {{ cagesneighbours.cage }}</p>
+    <p>Neighbour Cage: {{ cagesneighbours.cage_id_n }}</p>
+    <a href="{% url 'cagesneighbours_edit' pk=cagesneighbours.pk %}">Edit</a>
+    <a href="{% url 'cagesneighbours_list' %}">Back to list</a>
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Offspring List</title>
+</head>
+<body>
+    <h1>Offspring List</h1>
+    <a href="{% url 'offspring_new' %}">Add new offspring</a>
+    <ul>
+    {% for offspring in offsprings %}
+        <li>
+            <a href="{% url 'offspring_detail' pk=offspring.pk %}">{{ offspring.child.name }} (Child of {{ offspring.mom.name }} and {{ offspring.dad.name }})</a>
+            <a href="{% url 'offspring_edit' pk=offspring.pk %}">Edit</a>
+            <form action="{% url 'offspring_delete' pk=offspring.pk %}" method="post" style="display:inline;">
+                {% csrf_token %}
+                <button type="submit">Delete</button>
+            </form>
+        </li>
+    {% endfor %}
+    </ul>
+    <a href="{% url 'home' %}">Back to home</a>
+</body>
+</html>

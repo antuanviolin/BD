@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Warm Old Animals</title>
+</head>
+<body>
+    <h1>Animals Older than Specified Age that Need Warmth and Have Not Departed</h1>
+    <form method="get">
+        {{ form.as_p }}
+        <button type="submit">Submit</button>
+    </form>
+    <table border="1">
+        <tr>
+            {% for col in results.columns %}
+                <th>{{ col }}</th>
+            {% endfor %}
+        </tr>
+        {% for row in results.rows %}
+            <tr>
+                {% for cell in row %}
+                    <td>{{ cell }}</td>
+                {% endfor %}
+            </tr>
+        {% endfor %}
+    </table>
+    <a href="{% url 'home' %}">Back to Home</a>
+</body>
+</html>

@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Responsibility for Animal Detail</title>
+</head>
+<body>
+    <h1>Responsibility for Animal Detail</h1>
+    <p>Animal: {{ responsibilityforanimal.animal.name }}</p>
+    <p>Worker: {{ responsibilityforanimal.worker.name }}</p>
+    <p>Start Date: {{ responsibilityforanimal.date_start }}</p>
+    <p>End Date: {{ responsibilityforanimal.date_end }}</p>
+    <a href="{% url 'responsibilityforanimal_edit' pk=responsibilityforanimal.pk %}">Edit</a>
+    <a href="{% url 'responsibilityforanimal_list' %}">Back to list</a>
+</body>
+</html>

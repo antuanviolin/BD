@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Animal Type Detail</title>
+</head>
+<body>
+    <h1>Animal Type Detail</h1>
+    <p>Name: {{ typeanimal.name }}</p>
+    <p>Predator: {{ typeanimal.predator|yesno:"Yes,No" }}</p>
+    <p>Needs Warm Environment: {{ typeanimal.need_warm|yesno:"Yes,No" }}</p>
+    <a href="{% url 'typeanimal_edit' pk=typeanimal.pk %}">Edit</a>
+    <a href="{% url 'typeanimal_list' %}">Back to list</a>
+</body>
+</html>

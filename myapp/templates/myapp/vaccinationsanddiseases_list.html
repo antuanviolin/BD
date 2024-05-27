@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>List of Vaccinations and Diseases</title>
+</head>
+<body>
+    <h1>List of Vaccinations and Diseases</h1>
+    <a href="{% url 'vaccinationsanddiseases_new' %}">Add New Vaccination or Disease</a>
+    <ul>
+    {% for item in vaccinationsanddiseases %}
+        <li>
+            <a href="{% url 'vaccinationsanddiseases_detail' pk=item.pk %}">{{ item.animal.name }}: {{ item.name }}</a>
+            <a href="{% url 'vaccinationsanddiseases_edit' pk=item.pk %}">Edit</a>
+            <form action="{% url 'vaccinationsanddiseases_delete' pk=item.pk %}" method="post" style="display:inline;">
+                {% csrf_token %}
+                <button type="submit">Delete</button>
+            </form>
+        </li>
+    {% endfor %}
+    </ul>
+    <a href="{% url 'home' %}">Back to Home</a>
+</body>
+</html>

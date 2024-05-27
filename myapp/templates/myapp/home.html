@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Home</title>
+</head>
+<body>
+    <h1>Welcome to the Zoo Management System</h1>
+    <h2> Tables </h2>
+    <ul>
+        <li><a href="{% url 'animal_list' %}">Animals</a></li>
+        <li><a href="{% url 'animalplace_list' %}">Animal Places</a></li>
+        <li><a href="{% url 'cages_list' %}">Cages</a></li>
+        <li><a href="{% url 'cagesneighbours_list' %}">Cage Neighbours</a></li>
+        <li><a href="{% url 'compatibletype_list' %}">Compatible Types</a></li>
+        <li><a href="{% url 'food_list' %}">Food</a></li>
+        <li><a href="{% url 'foodseller_list' %}">Food Sellers</a></li>
+        <li><a href="{% url 'howeat_list' %}">How Eat</a></li>
+        <li><a href="{% url 'offspring_list' %}">Offspring</a></li>
+        <li><a href="{% url 'responsibilityforanimal_list' %}">Responsibility For Animal</a></li>
+        <li><a href="{% url 'sellers_list' %}">Sellers</a></li>
+        <li><a href="{% url 'typeanimal_list' %}">Type Animal</a></li>
+        <li><a href="{% url 'vaccinationsanddiseases_list' %}">Vaccinations and Diseases</a></li>
+        <li><a href="{% url 'worker_list' %}">Workers</a></li>
+    </ul>
+    <h2> Query </h2>
+    <ul>
+        <li><a href="{% url 'worker_tenure' %}">Worker Tenure</a></li>
+        <li><a href="{% url 'worker_age' %}">Worker Age</a></li>
+        <li><a href="{% url 'worker_wages' %}">Worker Wages</a></li>
+        <li><a href="{% url 'worker_gender' %}">Worker Gender</a></li>
+        <li><a href="{% url 'total_workers_by_animal_type' %}">Total Workers by Animal Type</a></li>
+        <li><a href="{% url 'workers_by_animal_type' %}">Workers by Animal Type</a></li>
+        <li><a href="{% url 'total_workers_by_animal_name' %}">Total Workers by Animal Name</a></li>
+        <li><a href="{% url 'workers_by_animal_name' %}">Workers by Animal Name</a></li>
+        <li><a href="{% url 'workers_in_by_animal_name' %}">Workers in Cages by Animal Name</a></li>
+        <li><a href="{% url 'workers_in_by_animal_type' %}">Workers in Cages by Animal Type</a></li>
+        <li><a href="{% url 'animal_type_in_cage' %}">Animal Type in Cage</a></li>
+        <li><a href="{% url 'warm_animals' %}">Warm Animals</a></li>
+        <li><a href="{% url 'warm_old_animals' %}">Warm Old Animals</a></li>
+        <li><a href="{% url 'animals_with_vaccination_or_disease' %}">Animals with Vaccination or Disease</a></li>
+        <li><a href="{% url 'compatible_animals' %}">Compatible Animals</a></li>
+        <li><a href="{% url 'food_sellers' %}">Food Sellers</a></li>
+        <li><a href="{% url 'animal_stats' %}">Animal Statistics</a></li>
+        <li><a href="{% url 'departure_zoos' %}">Departure Zoos</a></li>
+        <li><a href="{% url 'food_supply_status' %}">Food Supply Status</a></li>
+    </ul>
+</body>
+</html>

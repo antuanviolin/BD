@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Compatible Type Detail</title>
+</head>
+<body>
+    <h1>Compatible Type Detail</h1>
+    <p>Animal Type: {{ compatibletype.animal_type.name }}</p>
+    <p>Compatible Type: {{ compatibletype.compatible_type.name }}</p>
+    <a href="{% url 'compatibletype_edit' pk=compatibletype.pk %}">Edit</a>
+    <a href="{% url 'compatibletype_list' %}">Back to list</a>
+</body>
+</html>

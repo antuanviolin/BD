@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Worker Gender</title>
+</head>
+<body>
+    <h1>Workers by Gender</h1>
+    <form method="get">
+        {{ form.as_p }}
+        <button type="submit">Submit</button>
+    </form>
+    <h2>Workers by Gender</h2>
+    <table border="1">
+        <tr>
+            {% for col in results.query4.columns %}
+                <th>{{ col }}</th>
+            {% endfor %}
+        </tr>
+        {% for row in results.query4.rows %}
+            <tr>
+                {% for cell in row %}
+                    <td>{{ cell }}</td>
+                {% endfor %}
+            </tr>
+        {% endfor %}
+    </table>
+    <h2>Total Workers by Gender</h2>
+    <table border="1">
+        <tr>
+            {% for col in results.query5.columns %}
+                <th>{{ col }}</th>
+            {% endfor %}
+        </tr>
+        {% for row in results.query5.rows %}
+            <tr>
+                {% for cell in row %}
+                    <td>{{ cell }}</td>
+                {% endfor %}
+            </tr>
+        {% endfor %}
+    </table>
+    <a href="{% url 'home' %}">Back to Home</a>
+</body>
+</html>

@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Offspring Detail</title>
+</head>
+<body>
+    <h1>Offspring Detail</h1>
+    <p>Mom: {{ offspring.mom.name }}</p>
+    <p>Dad: {{ offspring.dad.name }}</p>
+    <p>Child: {{ offspring.child.name }}</p>
+    <a href="{% url 'offspring_edit' pk=offspring.pk %}">Edit</a>
+    <a href="{% url 'offspring_list' %}">Back to list</a>
+</body>
+</html>

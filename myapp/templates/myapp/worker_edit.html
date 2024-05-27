@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Edit worker</title>
+</head>
+<body>
+    <h1>Edit worker</h1>
+    <form method="post">
+        {% csrf_token %}
+        <p>Id: {{ form.instance.id }}</p>
+        {{ form.as_p }}
+        <button type="submit">Save</button>
+    </form>
+    <a href="{% url 'worker_list' %}">Back to list</a>
+</body>
+</html>

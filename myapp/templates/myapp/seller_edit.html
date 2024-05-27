@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Edit Seller</title>
+</head>
+<body>
+    <h1>Edit Seller</h1>
+    <form method="post">
+        {% csrf_token %}
+        <p>Id: {{ form.instance.id }}</p>
+        {{ form.as_p }}
+        <button type="submit">Save</button>
+    </form>
+    <a href="{% url 'sellers_list' %}">Cancel</a>
+</body>
+</html>

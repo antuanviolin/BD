@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Food Supply Status</title>
+</head>
+<body>
+    <h1>Food Supply Status</h1>
+    <table border="1">
+        <tr>
+            <th>Food Name</th>
+            <th>Total Weight Needed</th>
+            <th>Total Weight Supplied</th>
+            <th>Supply Status</th>
+        </tr>
+        {% for result in results %}
+            <tr>
+                <td>{{ result.food_name }}</td>
+                <td>{{ result.total_weight_needed }}</td>
+                <td>{{ result.total_weight_supplied }}</td>
+                <td>{{ result.supply_status }}</td>
+            </tr>
+        {% endfor %}
+    </table>
+    <a href="{% url 'home' %}">Back to Home</a>
+</body>
+</html>

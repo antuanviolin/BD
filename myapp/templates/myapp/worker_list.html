@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Workers</title>
+</head>
+<body>
+    <h1>Workers</h1>
+    <a href="{% url 'worker_new' %}">Add new worker</a>
+    <ul>
+    {% for worker in workers %}
+        <li>
+            <a href="{% url 'worker_detail' pk=worker.pk %}">{{ worker.name }} ({{ worker.profession }})</a>
+            <a href="{% url 'worker_edit' pk=worker.pk %}">Edit</a>
+            <form action="{% url 'worker_delete' pk=worker.pk %}" method="post" style="display:inline;">
+                {% csrf_token %}
+                <button type="submit">Delete</button>
+            </form>
+        </li>
+    {% endfor %}
+    </ul>
+    <a href="{% url 'home' %}">Back to home</a>
+</body>
+</html>

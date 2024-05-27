@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Edit Animal Type</title>
+</head>
+<body>
+    <h1>Edit Animal Type</h1>
+    <form method="post">
+        {% csrf_token %}
+        <p>Id: {{ form.instance.id }}</p>
+        {{ form.as_p }}
+        <button type="submit">Save</button>
+    </form>
+    <a href="{% url 'typeanimal_list' %}">Back to List</a>
+</body>
+</html>

@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Vaccination or Disease Detail</title>
+</head>
+<body>
+    <h1>Vaccination or Disease Detail</h1>
+    <p>Animal: {{ vaccinationsanddiseases.animal.name }}</p>
+    <p>Name: {{ vaccinationsanddiseases.name }}</p>
+    <a href="{% url 'vaccinationsanddiseases_edit' pk=vaccinationsanddiseases.pk %}">Edit</a>
+    <a href="{% url 'vaccinationsanddiseases_list' %}">Back to List</a>
+</body>
+</html>

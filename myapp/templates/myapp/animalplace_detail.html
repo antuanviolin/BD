@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Animalplace Detail</title>
+</head>
+<body>
+    <p>Animal: {{ animalplace.animal }} <p>
+    <p>Cage: {{ animalplace.cage }} <p>
+    <p>Start residence: {{ animalplace.start_residence }} <p>
+    <p>End residence: {{ animalplace.end_residence }} <p>
+    <a href="{% url 'animalplace_edit' pk=animalplace.pk %}">Edit</a>
+    <a href="{% url 'animalplace_list' %}">Back to list</a>
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>List of Animal Types</title>
+</head>
+<body>
+    <h1>List of Animal Types</h1>
+    <a href="{% url 'typeanimal_new' %}">Add New Animal Type</a>
+    <ul>
+    {% for typeanimal in typeanimals %}
+        <li>
+            <a href="{% url 'typeanimal_detail' pk=typeanimal.pk %}">{{ typeanimal.name }}</a>
+            <a href="{% url 'typeanimal_edit' pk=typeanimal.pk %}">Edit</a>
+            <form action="{% url 'typeanimal_delete' pk=typeanimal.pk %}" method="post" style="display:inline;">
+                {% csrf_token %}
+                <button type="submit">Delete</button>
+            </form>
+        </li>
+    {% endfor %}
+    </ul>
+    <a href="{% url 'home' %}">Back to home</a>
+</body>
+</html>

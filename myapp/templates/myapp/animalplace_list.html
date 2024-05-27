@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>animalplace</title>
+</head>
+<body>
+    <h1>Animalplaces</h1>
+    <a href="{% url 'animalplace_new' %}">Add new animalplace</a>
+    <ul>
+    {% for animalplace in animalplaces%}
+        <li>
+            <a href="{% url 'animalplace_detail' pk=animalplace.pk %}">{{ animalplace.animal }} ({{ animalplace.cage }})</a>
+            <a href="{% url 'animalplace_edit' pk=animalplace.pk %}">Edit</a>
+            <form action="{% url 'animalplace_delete' pk=animalplace.pk %}" method="post" style="display:inline;">
+                {% csrf_token %}
+                <button type="submit">Delete</button>
+            </form>
+        </li>
+    {% endfor %}
+    </ul>
+    <a href="{% url 'home' %}">Back to home</a>
+</body>
+</html>

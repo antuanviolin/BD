@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Cages</title>
+</head>
+<body>
+    <h1>Cages</h1>
+    <a href="{% url 'cages_new' %}">Add new cage</a>
+    <ul>
+    {% for cage in cages %}
+        <li>
+            <a href="{% url 'cages_detail' pk=cage.pk %}">Cage {{ cage.id }}</a>
+            <a href="{% url 'cages_edit' pk=cage.pk %}">Edit</a>
+            <form action="{% url 'cages_delete' pk=cage.pk %}" method="post" style="display:inline;">
+                {% csrf_token %}
+                <button type="submit">Delete</button>
+            </form>
+        </li>
+    {% endfor %}
+    </ul>
+    <a href="{% url 'home' %}">Back to home</a>
+</body>
+</html>

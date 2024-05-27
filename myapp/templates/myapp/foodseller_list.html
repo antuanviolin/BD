@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Food Sellers</title>
+</head>
+<body>
+    <h1>Food Sellers</h1>
+    <a href="{% url 'foodseller_new' %}">Add new food seller</a>
+    <ul>
+    {% for foodseller in foodsellers %}
+        <li>
+            <a href="{% url 'foodseller_detail' pk=foodseller.pk %}">{{ foodseller.seller.name }} sells {{ foodseller.food.name }}</a>
+            <a href="{% url 'foodseller_edit' pk=foodseller.pk %}">Edit</a>
+            <form action="{% url 'foodseller_delete' pk=foodseller.pk %}" method="post" style="display:inline;">
+                {% csrf_token %}
+                <button type="submit">Delete</button>
+            </form>
+        </li>
+    {% endfor %}
+    </ul>
+    <a href="{% url 'home' %}">Back to home</a>
+</body>
+</html>

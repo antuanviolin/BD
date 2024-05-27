@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Edit How Eat</title>
+</head>
+<body>
+    <h1>Edit How Eat</h1>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Save</button>
+    </form>
+    <a href="{% url 'howeat_list' %}">Back to list</a>
+</body>
+</html>

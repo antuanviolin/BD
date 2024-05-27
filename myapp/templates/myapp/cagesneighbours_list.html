@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Cage Neighbours</title>
+</head>
+<body>
+    <h1>Cage Neighbours</h1>
+    <a href="{% url 'cagesneighbours_new' %}">Add new cage neighbours</a>
+    <ul>
+    {% for cagesneighbours in cagesneighbours %}
+        <li>
+            <a href="{% url 'cagesneighbours_detail' pk=cagesneighbours.pk %}">Cage {{ cagesneighbours.cage }} - Neighbour Cage {{ cagesneighbours.cage_id_n }}</a>
+            <a href="{% url 'cagesneighbours_edit' pk=cagesneighbours.pk %}">Edit</a>
+            <form action="{% url 'cagesneighbours_delete' pk=cagesneighbours.pk %}" method="post" style="display:inline;">
+                {% csrf_token %}
+                <button type="submit">Delete</button>
+            </form>
+        </li>
+    {% endfor %}
+    </ul>
+    <a href="{% url 'home' %}">Back to home</a>
+</body>
+</html>

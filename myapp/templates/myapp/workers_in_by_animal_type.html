@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Workers by Animal Type</title>
+</head>
+<body>
+    <h1>Find Workers Responsible for a Specific Animal Type</h1>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Search</button>
+    </form>
+    {% if workers %}
+        <h2>Results:</h2>
+        <ul>
+        {% for worker in workers %}
+            <li>{{ worker.0 }}</li>
+        {% endfor %}
+        </ul>
+    {% endif %}
+    <a href="{% url 'home' %}">Back to Home</a>
+</body>
+</html>

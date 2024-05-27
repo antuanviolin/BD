@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Cage Detail</title>
+</head>
+<body>
+    <h1>Cage Detail</h1>
+    <p>Cage ID: {{ cage.id }}</p>
+    <p>Is Warm: {% if cage.is_warm %}Yes{% else %}No{% endif %}</p>
+    <a href="{% url 'cages_edit' pk=cage.pk %}">Edit</a>
+    <a href="{% url 'cages_list' %}">Back to list</a>
+</body>
+</html>

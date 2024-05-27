@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Animals with Vaccination or Disease</title>
+</head>
+<body>
+    <h1>Animals with Specified Vaccination or Disease</h1>
+    <form method="get">
+        {{ form.as_p }}
+        <button type="submit">Submit</button>
+    </form>
+    <table border="1">
+        <tr>
+            {% for col in results.columns %}
+                <th>{{ col }}</th>
+            {% endfor %}
+            <th>Total</th>
+        </tr>
+        {% for row in results.rows %}
+            <tr>
+                {% for cell in row %}
+                    <td>{{ cell }}</td>
+                {% endfor %}
+            </tr>
+        {% endfor %}
+    </table>
+    <a href="{% url 'home' %}">Back to Home</a>
+</body>
+</html>
